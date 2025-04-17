@@ -1,0 +1,61 @@
+---
+title: "DuckDB dan Parquet Format"
+format:
+  revealjs:
+    embed-resources: true
+---
+
+## Overview
+
+* Kenapa dengan file `parquet`?
+* Bagaimana penggunaan `duckdb`?
+* Supaya optimal, perlu modular skrip (tidak dibahas detail)
+
+# Parquet Format
+
+## Perbandingan Format File
+
+| Format | Keunggulan | Kelemahan |
+| --- | --- | --- |
+| CSV | universal, mudah dibuka | ukuran besar, lambat untuk big data |
+| Excel | praktis, bisa pakai rumus | tidak scalable, ada limitasi baris |
+| SPSS | analisis statistik canggih | berbayar, tidak fleksibel |
+| Parquet | ringan, cepat, scalable | tidak user-friendly bagi pemula |
+
+## Highlight Parquet Format
+
+* size file relatif kecil dibanding format lain
+* tipe data tersimpan
+* _partitioning_ fleksibel dan konsisten
+
+## Cara akses File Parquet
+
+* [DBeaver](https://dbeaver.io)
+* [DuckDB (SQL base)](https://duckdb.org)
+* [Python package (Python base)](https://www.python.org)
+* [R package (R base)](https://www.r-project.org)
+* [Positron](https://positron.posit.co)
+
+# DuckDB
+
+## Apa itu DuckDB?
+
+* SQL-based syntax yang teroptimasi untuk keperluan `analisis`
+
+## Syntax unik DuckDB
+
+Di antaranya:
+
+* kombinasi `select` dan `exclude`
+* query `pivot`
+* query `summarize`
+
+Selengkapnya bisa dicek di dokumentasi [berikut](https://duckdb.org/docs/stable/sql/introduction)
+
+# Modular Skrip
+
+## Pemisahan SQL File
+
+* Membuat code menjadi bersih
+* SQL bisa sewaktu-waktu dipakai di aplikasi dbeaver atau semacamnya
+* Makin kompleks/panjang skrip, akan lebih nyaman jika dipisah file daripada scroll terlalu panjang
